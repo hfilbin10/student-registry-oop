@@ -37,4 +37,9 @@ def test_invalid_grade_setter():
     student.set_grade = "13th"
     assert student.get_grade == "12th"
 
+def test_student_grade_setter():
+    student = Student("Halsey")
+    student.set_grade = "7th"
+    assert student.get_grade == "12th"
+
 # Write tests for Class methods
