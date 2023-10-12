@@ -8,14 +8,6 @@ class Student:
     def get_name(self):
         return self._name
     
-    @property
-    def get_age(self):
-        return self._age
-    
-    @property
-    def get_grade(self):
-        return self._grade
-    
     @get_name.setter
     def set_name(self, new_name):
         if isinstance(new_name, str) and len(new_name) >= 3:
@@ -25,15 +17,24 @@ class Student:
             #     if (char.isnumeric() or char.isalpha()):
             #         self.name = new_name
 
+    @property
+    def get_age(self):
+        return self._age
+    
     @get_age.setter
     def set_age(self, new_age):
         if type(new_age) == int and new_age > 11 and new_age < 18:
             self._age = new_age
+    @property
+    def get_grade(self):
+        return self._grade
     
     @get_grade.setter
     def set_grade(self, new_grade):
         if int(new_grade[:-2]) in range(9, 13) and new_grade.endswith("th"):
             self._grade = new_grade
+
+    
 
     def __str__(self):
         return f"{self.get_name} is {self.get_age} years old & in the {self.get_grade} grade."
